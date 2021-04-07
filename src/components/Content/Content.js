@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import { Inicio } from '../Inicio/Inicio'
-import { Login } from '../Login/Login';
-import { Proyectos } from '../Proyectos/Proyectos';
-import { Equipos } from '../Equipos/Equipos';
-import { Ayuda } from '../Ayuda/Ayuda';
-import { Perfil } from '../Perfil/Perfil';
+import { Inicio } from '../../pages/Inicio/Inicio';
+import { Login } from '../../pages/Login/Login';
+import { Proyectos } from '../../pages/Proyectos/Proyectos';
+import { Equipos } from '../../pages/Equipos/Equipos';
+import { Ayuda } from '../../pages/Ayuda/Ayuda';
+import { Perfil } from '../../pages/Perfil/Perfil';
 
 export const Content = () => {
     return (

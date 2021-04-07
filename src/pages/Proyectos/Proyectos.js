@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 import Card from 'react-bootstrap/Card';
-import { Cards } from '../Cards/Cards';
+import { Cards } from '../../components/Cards/Cards';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'
-import { AddProyecto } from '../AddProyecto/AddProyecto';
+import { AddProyecto } from '../../components/AddProyecto/AddProyecto';
 
 export const Proyectos = () => {
 
