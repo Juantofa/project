@@ -8,6 +8,8 @@ import { Equipos } from '../../pages/Equipos/Equipos';
 import { Ayuda } from '../../pages/Ayuda/Ayuda';
 import { Perfil } from '../../pages/Perfil/Perfil';
 
+import './Content.css';
+
 export const Content = () => {
     return (
         <div className="container">

@@ -7,7 +7,10 @@ import Button from 'react-bootstrap/Button';
 export const Login = () => {
     return (
         <div style={{ textAlign: "-webkit-center" }}>
-            <Card border="primary" style={{ width: "70%" }}>
+            <Card border="primary" style={{
+              width: "70%",
+              minWidth: "300px"
+              }}>
                 <Card.Body>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
