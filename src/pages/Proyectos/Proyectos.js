@@ -1,35 +1,23 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Cards } from '../../components/Cards/Cards';
 import Row from 'react-bootstrap/Row';
 import { AddProyecto } from '../../components/AddProyecto/AddProyecto';
+import apiCall from "../../api/apiCall";
 
 export const Proyectos = () => {
 
-    const [proyectos, setProyectos] = useState([
-        {
-            titulo: "React",
-            jefe: "Cristian",
-            descripcion: "Hacer un proyecto usando ReactJS"
-        }, {
-            titulo: "Python",
-            jefe: "Félix",
-            descripcion: "Hacer un proyecto usando Python"
-        }, {
-            titulo: "Angular",
-            jefe: "Jose",
-            descripcion: "Hacer un proyecto usando Angular"
-        }, {
-            titulo: "Vue",
-            jefe: "Jose",
-            descripcion: "Hacer un proyecto usando Vue"
-        }, {
-            titulo: "Java",
-            jefe: "Jose",
-            descripcion: "Hacer un proyecto usando Java"
+    const [proyectos, setProyectos] = useState([]);
+
+    useEffect(async() => {
+        try {
+            const result =   await apiCall({ url: "https://api.npoint.io/48d507b58a262376515d" });
+            setProyectos(result);
+        } catch (error) {
+            console.log(error);
         }
-    ]);
+    }, []);
+
 
 
     return (
@@ -43,8 +31,8 @@ export const Proyectos = () => {
                         </div>
                         <div style={{ textAlign: "-webkit-center" }}>
                             <Row className="justify-content-md-center">
-                                <AddProyecto setProyectos = {setProyectos}/>
-                                {proyectos.map(proyecto => <Cards proyecto={proyecto}/>)}
+                                <AddProyecto setProyectos={setProyectos} />
+                                {proyectos?.map((proyecto, index) => <Cards key={index} proyecto={proyecto} />)}
                             </Row>
                         </div>
                     </div>
